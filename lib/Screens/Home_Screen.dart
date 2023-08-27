@@ -172,6 +172,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         width: 20,
                       ),
+                      CustomFoodCard(
+                          type: 'Dry food',
+                          expaire: 25,
+                          factory: 'itali',
+                          // meetingName: 'meetingName',
+                          imagename: 'images/FoodAnimal1.jpg'),
                       SizedBox(
                         width: 30,
                       )

@@ -67,7 +67,15 @@ class _UserprofileState extends State<Userprofile> {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          // appBar: AppBar(),
+          appBar: AppBar(
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.arrow_back)),
+            elevation: 0,
+            backgroundColor: Color(0xFF15464E),
+          ),
           backgroundColor: const Color(0xFF293462),
           body: Column(
             children: [
