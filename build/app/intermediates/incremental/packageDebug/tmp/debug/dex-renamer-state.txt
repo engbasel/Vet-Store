@@ -1,4 +1,4 @@
-#Sun Aug 27 12:51:37 EET 2023
+#Sun Aug 27 17:10:48 EET 2023
 base.2=C\:\\Users\\Lenovo\\Downloads\\vet_test-main\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\Users\\Lenovo\\Downloads\\vet_test-main\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
