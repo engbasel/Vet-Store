@@ -1,6 +1,8 @@
+import 'package:animlaowner/Modules/DataUserProvder.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Custom_Widget/coustomUI.dart';
@@ -82,8 +84,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       //                                Email
                       // ----------------------------------------------------------------------------
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 15),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors
@@ -181,7 +183,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       // ----------------------------------------------------------------------------
                       //                                Login Bottom
                       // ----------------------------------------------------------------------------
-
                       GestureDetector(
                         onTap: () async {
                           setState(() {
@@ -209,15 +210,19 @@ class _LoginScreenState extends State<LoginScreen> {
                                       .get();
                               Map<String, dynamic> userData = userDataSnapshot
                                   .data() as Map<String, dynamic>;
-
-                              Navigator.of(context).pushReplacement(
+                              Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                   builder: (context) => HomeScreen(
                                     username: _controllerusername.text,
                                     userData: userData,
                                   ),
                                 ),
+                                (route) => false,
                               );
+
+                              Provider.of<UserDataProvider>(context,
+                                      listen: false)
+                                  .setUserData(userData);
                             } on FirebaseAuthException catch (e) {
                               if (e.code == 'user-not-found') {
                                 print('No user found for that email.');
@@ -259,7 +264,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-
                       // ----------------------------------------------------------------------------
                       //                                Login Bottom
                       // ----------------------------------------------------------------------------

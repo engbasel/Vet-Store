@@ -1,7 +1,9 @@
+import 'package:animlaowner/Modules/DataUserProvder.dart';
 import 'package:animlaowner/Screens/Home_Screen.dart';
 import 'package:animlaowner/Screens/paymentScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'Screens/CatoigryScreen.dart';
 import 'Screens/Dogprofile.dart';
@@ -18,7 +20,12 @@ void main(List<String> args) async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const Vet_Clinic());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UserDataProvider(),
+      child: Vet_Clinic(),
+    ),
+  );
 }
 
 class Vet_Clinic extends StatelessWidget {
