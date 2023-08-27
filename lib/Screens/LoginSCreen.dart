@@ -8,6 +8,8 @@ import 'Home_Screen.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatefulWidget {
+  bool _isLoading = false;
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
   String? username;
@@ -32,6 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
       _isObscured = !_isObscured;
     });
   }
+
+  bool _isLoggingIn = false;
 
   final TextEditingController _controllerusername = TextEditingController();
 
@@ -173,12 +177,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       // ----------------------------------------------------------------------------
                       //                                password
                       // ----------------------------------------------------------------------------
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 25),
                       // ----------------------------------------------------------------------------
                       //                                Login Bottom
                       // ----------------------------------------------------------------------------
+
                       GestureDetector(
                         onTap: () async {
+                          setState(() {
+                            _isLoggingIn = true; // Show progress indicator
+                          });
+
                           if (_Key.currentState!.validate()) {
                             try {
                               await saveprefs();
@@ -215,19 +224,42 @@ class _LoginScreenState extends State<LoginScreen> {
                               } else if (e.code == 'wrong-password') {
                                 print('Wrong password provided for that user.');
                               }
+                              // Handle exceptions
+                            } finally {
+                              setState(() {
+                                _isLoggingIn = false; // Hide progress indicator
+                              });
                             }
                           }
                         },
                         child: Container(
-                          width: 300,
+                          width: 350,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF00818A),
-                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.blueGrey, // Background color
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 10,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
                           ),
-                          child: const Center(child: Text('Login')),
+                          child: Center(
+                            child: _isLoggingIn
+                                ? CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.white),
+                                  )
+                                : Text(
+                                    'Login',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                          ),
                         ),
                       ),
+
                       // ----------------------------------------------------------------------------
                       //                                Login Bottom
                       // ----------------------------------------------------------------------------
@@ -279,3 +311,136 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+// bool _isSigningUp = false;
+
+// GestureDetector(
+//   onTap: () async {
+//     setState(() {
+//       _isSigningUp = true; // Show progress indicator
+//     });
+
+//     if (_Key.currentState!.validate()) {
+//     try {
+//                               await saveprefs();
+
+//                               UserCredential userCredential = await FirebaseAuth
+//                                   .instance
+//                                   .signInWithEmailAndPassword(
+//                                 email: _controllerEmali.text,
+//                                 password: _controllerpassword.text,
+//                               );
+
+//                               print(
+//                                   'User successfully logged in: ${userCredential.user?.email}');
+//                               DocumentSnapshot userDataSnapshot =
+//                                   await FirebaseFirestore.instance
+//                                       .collection('users')
+//                                       .doc(FirebaseAuth
+//                                           .instance.currentUser!.uid)
+//                                       .get();
+//                               Map<String, dynamic> userData = userDataSnapshot
+//                                   .data() as Map<String, dynamic>;
+
+//                               Navigator.of(context).pushReplacement(
+//                                 MaterialPageRoute(
+//                                   builder: (context) => HomeScreen(
+//                                     username: _controllerusername.text,
+//                                     userData: userData,
+//                                   ),
+//                                 ),
+//                               );
+//                             }  on FirebaseAuthException catch (e) { if (e.code == 'user-not-found') {
+//                                 print('No user found for that email.');
+//                               } else if (e.code == 'wrong-password') {
+//                                 print('Wrong password provided for that user.');
+//                               }
+//         // Handle exceptions
+//       }  finally {
+//         setState(() {
+//           _isSigningUp = false; // Hide progress indicator
+//         });
+//       }
+//     }
+//   },
+//   child: Container(
+//     width: 300,
+//     height: 50,
+//     decoration: BoxDecoration(
+//       color: const Color(0xFF00818A),
+//       borderRadius: BorderRadius.circular(30),
+//     ),
+//     child: Center(
+//       child: _isSigningUp
+                      // ? CircularProgressIndicator(backgroundColor: Colors.transparent)
+//           : Text(
+//               'sign up',
+//               style: TextStyle(color: Colors.white),
+//             ),
+//     ),
+//   ),
+// )
+
+// =========================================================
+
+                      // GestureDetector(
+                      //   onTap: () async {
+                      //     if (_Key.currentState!.validate()) {
+                      //       try {
+                      //         await saveprefs();
+
+                      //         UserCredential userCredential = await FirebaseAuth
+                      //             .instance
+                      //             .signInWithEmailAndPassword(
+                      //           email: _controllerEmali.text,
+                      //           password: _controllerpassword.text,
+                      //         );
+
+                      //         print(
+                      //             'User successfully logged in: ${userCredential.user?.email}');
+                      //         DocumentSnapshot userDataSnapshot =
+                      //             await FirebaseFirestore.instance
+                      //                 .collection('users')
+                      //                 .doc(FirebaseAuth
+                      //                     .instance.currentUser!.uid)
+                      //                 .get();
+                      //         Map<String, dynamic> userData = userDataSnapshot
+                      //             .data() as Map<String, dynamic>;
+
+                      //         Navigator.of(context).pushReplacement(
+                      //           MaterialPageRoute(
+                      //             builder: (context) => HomeScreen(
+                      //               username: _controllerusername.text,
+                      //               userData: userData,
+                      //             ),
+                      //           ),
+                      //         );
+                      //       } on FirebaseAuthException catch (e) {
+                      //         if (e.code == 'user-not-found') {
+                      //           print('No user found for that email.');
+                      //         } else if (e.code == 'wrong-password') {
+                      //           print('Wrong password provided for that user.');
+                      //         }
+                      //       }
+                      //     }
+                      //   },
+                      //   child: Container(
+                      //     width: 300,
+                      //     height: 50,
+                      //     decoration: BoxDecoration(
+                      //       color: const Color(0xFF00818A),
+                      //       borderRadius: BorderRadius.circular(30),
+                      //     ),
+                      //     child: const Center(child: Text('Login')),
+                      //   ),
+                      // ),

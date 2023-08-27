@@ -335,8 +335,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // ----------------------------------------------------------------------------
                 const SizedBox(height: 25),
 
-// ********************************************************************
-
                 GestureDetector(
                   onTap: () async {
                     GestureDetector(
@@ -398,7 +396,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           padding: const EdgeInsets.symmetric(
                               vertical: 16, horizontal: 20),
                           decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            color: Color(0xFF00818A),
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
