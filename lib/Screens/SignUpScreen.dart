@@ -476,69 +476,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 )
 
-// ********************************************************************
-
-                // GestureDetector(
-                //   onTap: () async {
-                //   if (_Key.currentState!.validate()) {
-                //     try {
-                //       final newUser = await FirebaseAuth.instance
-                //           .createUserWithEmailAndPassword(
-                //               email: _controllerEmali.text,
-                //               password: _controllerpassword.text);
-                //       print('==================================');
-                //       print('you sign up sucssesfuly');
-                //       print('=============================');
-
-                //       await FirebaseFirestore.instance
-                //           .collection('users')
-                //           .doc(newUser.user!.uid)
-                //           .set({
-                //         'email': _controllerEmali.text,
-                //         'username': _controllerusername.text,
-                //         'cityname': _CityName.text,
-                //         'phonenumber': _phonenumber.text,
-                //         'animaltype': animaltype.text,
-                //       });
-
-                //       Navigator.of(context).push(
-                //         MaterialPageRoute(
-                //           builder: (context) => LoginScreen(
-                //             animaltype: animaltype.text,
-                //             city: _CityName.text,
-                //             username: _controllerusername.text,
-                //             phone: _phonenumber.text,
-                //           ),
-                //         ),
-                //       );
-                //       print('==================================');
-                //       print('you Navigated to sgin in sucssesfuly');
-                //       print('=============================');
-                //     } on FirebaseAuthException catch (e) {
-                //       if (e.code == 'weak-password') {
-                //         print('The password provided is too weak.');
-                //       } else if (e.code == 'email-already-in-use') {
-                //         print('The account already exists for that email.');
-                //       }
-                //     } catch (e) {
-                //       print(e);
-                //     }
-                //   }
-                // },
-                //   child: Container(
-                //     width: 300,
-                //     height: 50,
-                //     decoration: BoxDecoration(
-                //       color: const Color(0xFF00818A),
-                //       borderRadius: BorderRadius.circular(30),
-                //     ),
-                //     child: const Center(
-                //         child: Text(
-                //       'sign up',
-                //       style: TextStyle(color: Colors.white),
-                //     )),
-                //   ),
-                // ),
                 // ----------------------------------------------------------------------------
                 //                                sign up bottom
                 // ----------------------------------------------------------------------------

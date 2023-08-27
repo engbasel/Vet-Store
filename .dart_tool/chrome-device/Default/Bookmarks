@@ -1,0 +1,100 @@
+{
+   "checksum": "32ba5d94fe2d6da1e307bd196e857332",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13268708087724911",
+            "date_last_used": "0",
+            "guid": "b19fc2cb-8e04-47a2-a48e-6ef9561b8bdc",
+            "id": "6",
+            "name": "lichess",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://lichess.org/"
+         }, {
+            "date_added": "13270840494479033",
+            "date_last_used": "0",
+            "guid": "26c6fca8-be2b-47d8-96d9-817e8c70212e",
+            "id": "7",
+            "name": "YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13269481468187971",
+            "date_last_used": "0",
+            "guid": "b1aec228-01fb-44b4-9f8b-0c71cec4925c",
+            "id": "8",
+            "name": "Facebook",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.facebook.com/"
+         }, {
+            "date_added": "13270840434279012",
+            "date_last_used": "0",
+            "guid": "df2b2b79-7f31-4859-a118-df2f831e71e5",
+            "id": "9",
+            "name": "Twitter",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://twitter.com/home"
+         }, {
+            "date_added": "13275360028697236",
+            "date_last_used": "0",
+            "guid": "18f64f7f-849f-414d-b356-30aab1473f7b",
+            "id": "10",
+            "name": "LinkedIn",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.linkedin.com/in/abdelrahman-el-hussien-b14a731b4/"
+         }, {
+            "date_added": "13269482221615448",
+            "date_last_used": "0",
+            "guid": "95d61e25-d1e3-455e-b4c7-e23b0b23574e",
+            "id": "11",
+            "name": "Android Basics in Kotlin course  |  Android Developers",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://developer.android.com/courses/android-basics-kotlin/course"
+         } ],
+         "date_added": "13337558986943112",
+         "date_last_used": "0",
+         "date_modified": "13275360028697236",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13337558986943114",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13337558986943115",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCPFfvDOKAQAAKg4QABgBIAgoBjAAOABAABIAIAEqGDNLMHlVNnpoZWk5MlRzWWVndzk2N1E9PaAGDBKoAQgLEqMBChxBV0dXSHF5MkgwUXJmYXdKTUkwMFNVa0hXT3M9EiQ5NWQ2MWUyNS1kMWUzLTQ1NWUtYjRjNy1lMjNiMGIyMzU3NGUYACAAKAAw/OP7/54xOPnPhd7/MED5z4Xe/zBKHGYzWmE2aC9iWGRCTXR5KzV4NEFxQ2ZUNFd2MD1aHyId9mlVdFlWNHozVlRjeElPejIwNDBzVFc5OHR1cz1lo9WsGBKoAQgKEqMBChxjU0lrQjZUZjAwT1VGRVJmWUt3c3ZDaWlweW89EiQxOGY2NGY3Zi04NDlmLTQxNGQtYjM1Ni0zMGFhYjE0NzNmN2IYACAAKAAw+uP7/54xOOLPhd7/MEDiz4Xe/zBKHCsxYzZMM2psY3Qwb2x3UFQ0TFQ2ZzBnOStNST1aHyId7FB2QmNyc0xJMW9ETG5oSWNuUTVjZVdRWFdZND1lctd0tBKoAQgJEqMBChxYVUNrc3pUYStPUmNvKzlVNzBYd2IwaWExazA9EiRkZjJiMmI3OS03ZjMxLTQ4NTktYTExOC1kZjJmODMxZTcxZTUYACACKAIwmvyDnqMxOMvPhd7/MECzzIOeozFKHDFXQmgwU0lyaU5yTXg4MlV0TnNWMGR4MS8wUT1aHyId2ExMZndBWElRVVM5b3RydERzbmdUa0lOMC9zaz1lIhcGHRKoAQgIEqMBChw3YVZsL1dSS3VKWFZxT3VSSmpUUVM0T09GZGc9EiRiMWFlYzIyOC0wMWZiLTQ0YjQtOWY4Yi0wYzcxY2VjNDkyNWMYACACKAIwmPyDnqMxOI7Phd7/MECyzIOeozFKHEN2UC9DaWxPTU1hQ0d6UUhld2JZZWRmZ3lRUT1aHyIdsDIwRmJHVDRrN3VmZ2ErbzRqOTZVZWtXOERQMD1lxJF2xRKnAQgHEqIBChxGTWJKcXlzY05zbnM0OFN3a0paNm9mN2ZYU009EiQyNmM2ZmNhOC1iZTJiLTQ3ZDgtOTZkOS04MTdlOGM3MDIxMmUYACACKAIwl/yDnqMxOPjQhd7/MECyzIOeozFKHGJ4K0dQTlIrTjR6WU5HUzVnWlZtd1RZbDhPMD1aHiIcYUFRRXZGUUVjQUlBTTlqazg5Q0o5NGJ4RWxBPWU4+TkzEqcBCAYSogEKHDJLRm5tVVJta1dYMFNhRGI3ODhBNGlKQkF1Zz0SJGIxOWZjMmNiLThlMDQtNDdhMi1hNDhlLTZlZjk1NjFiOGJkYxgAIAIoAjCZ/IOeozE4wtCF3v8wQLLMg56jMUocMlVKQWJCZzcvd3dIWXpqYTdhdHBhV3NCck8wPVoeIhw1eG04L1M1OURvc0R6dnV1ZmtheTBhWG1nV009ZU6/4n0SiQEIARKEAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkYzgyMmZkYjUtOWFkZi01NjQ1LWFkZWEtN2FkMzA3MWQ3NTE5GAAgACgAMJzTnqLeMDij1p6i3jBAo9aeot4wShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAABKJAQgCEoQBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiQ3MTg4YzAyZi1mNjdmLTVjOTItYTFhNy0zYThiYWQwYmE5NDQYACAAKAAwndOeot4wOLPWnqLeMECz1p6i3jBKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAEokBCAMShAEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDVmMDE2ZjFjLTM2YzktNWVkZC1hNTdiLTIwNmRlMzlhN2EzMRgAIAAoADCi056i3jA439eeot4wQN/XnqLeMEoceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAAAwADgA",
+   "version": 1
+}
