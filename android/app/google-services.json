@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "87606093584",
+    "project_id": "vet-clinic-8f893",
+    "storage_bucket": "vet-clinic-8f893.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87606093584:android:d19c17aa2d0bb4e7552795",
+        "android_client_info": {
+          "package_name": "com.example.animlaowner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87606093584-7tqkq5b031i1tldfqe3rhu03bqn4mf9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGXt27H55DjofrYVL3YL30sG-QI2t-3mA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87606093584-6np3t204r2621nnqrkjk4p84fk9j0ffa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "87606093584-25f82ggeiipcrm9vgift4dta6c32d6du.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.animlaowner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
