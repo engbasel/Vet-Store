@@ -1,5 +1,7 @@
+import 'package:animlaowner/Modules/DataUserProvder.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 class Userprofile extends StatefulWidget {
   const Userprofile({super.key});
@@ -18,37 +20,46 @@ class _UserprofileState extends State<Userprofile> {
   @override
   void initState() {
     super.initState();
-    getprefs(); // Call the getprefs() method when the widget initializes
+    // getprefs(); // Call the getprefs() method when the widget initializes
   }
 
-  getprefs() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      username = preferences.getString('username');
-      phone = preferences.getString('phone');
-      animaltype = preferences.getString('animaltype');
-      cityname = preferences.getString('cityname');
-      email = preferences.getString('email');
-      // username = preferences.getString('username');
-      // username = preferences.getString('username');
-    });
+  late Map<String, dynamic>? userData =
+      Provider.of<UserDataProvider>(context, listen: false).userData;
 
-    print('===========================================');
-    print(username);
-    print('===========================================');
+  // getprefs() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     username = preferences.getString('username');
+  //     phone = preferences.getString('phone');
+  //     animaltype = preferences.getString('animaltype');
+  //     cityname = preferences.getString('cityname');
+  //     email = preferences.getString('email');
+  //     // username = preferences.getString('username');
+  //     // username = preferences.getString('username');
+  //   });
 
-    print('===========================================');
-    print(phone);
-    print('===========================================');
+  //   print('===========================================');
+  //   print('${userData!['username']}');
+  //   print('===========================================');
 
-    print('===========================================');
-    print(cityname);
-    print('===========================================');
+  //   print('===========================================');
+  //   print('${userData!['cityname']}');
+  //   print('===========================================');
 
-    print('===========================================');
-    print(email);
-    print('===========================================');
-  }
+  //   print('===========================================');
+  //   print('${userData!['animaltype']}');
+  //   print('===========================================');
+
+  //   print('===========================================');
+  //   print('${userData!['email']}');
+  //   print('===========================================');
+  //   print('===========================================');
+  //   print('${userData!['password']}');
+  //   print('===========================================');
+  //   print('===========================================');
+  //   print('${userData!['phone']}');
+  //   print('===========================================');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +85,7 @@ class _UserprofileState extends State<Userprofile> {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        username.toString(),
+                        '${userData!['username']}',
                         style:
                             const TextStyle(color: Colors.white, fontSize: 25),
                       )
@@ -106,7 +117,7 @@ class _UserprofileState extends State<Userprofile> {
                                 width: 50,
                               ),
                               Text(
-                                '$email',
+                                '${userData!['email']}',
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 25,
@@ -130,7 +141,7 @@ class _UserprofileState extends State<Userprofile> {
                               width: 50,
                             ),
                             Text(
-                              '$phone',
+                              '${userData!['phonenumber']}',
                               style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -153,7 +164,7 @@ class _UserprofileState extends State<Userprofile> {
                               width: 50,
                             ),
                             Text(
-                              '$cityname',
+                              '${userData!['cityname']}',
                               style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,
@@ -176,7 +187,7 @@ class _UserprofileState extends State<Userprofile> {
                               width: 50,
                             ),
                             Text(
-                              '$animaltype',
+                              '${userData!['animaltype']}',
                               style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 25,

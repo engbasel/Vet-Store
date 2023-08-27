@@ -1,7 +1,9 @@
+import 'package:animlaowner/Modules/DataUserProvder.dart';
 import 'package:flutter/material.dart';
 import 'package:animlaowner/Custom_Widget/CoustomFoodCard.dart';
 import 'package:animlaowner/Custom_Widget/walkCard.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 import '../Custom_Widget/CoustoDrawer.dart';
 import '../Custom_Widget/CoustomconstWord.dart';
 
@@ -19,6 +21,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Map<String, dynamic>? userData =
+      Provider.of<UserDataProvider>(context, listen: false).userData;
 // -----------------------------
 
   var username;
@@ -30,18 +34,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    getprefs(); // Call the getprefs() method when the widget initializes
+    // getprefs(); // Call the getprefs() method when the widget initializes
   }
 
-  getprefs() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      username = preferences.getString('username');
-    });
-    print('===========================================');
-    print(username);
-    print('===========================================');
-  }
+  // getprefs() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     username = preferences.getString('username');
+  //   });
+  //   print('===========================================');
+  //   print(username);
+  //   print('===========================================');
+  // }
 
 // -----------------------------
 
@@ -69,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                       ),
                       Text(
-                        'Hi, $username',
+                        'Hi ${userData!['username']}',
                         style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,

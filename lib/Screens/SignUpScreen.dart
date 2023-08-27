@@ -336,108 +336,58 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 25),
 
                 GestureDetector(
-                  onTap: () async {
-                    GestureDetector(
-                      onTap: _isLoading
-                          ? null // Disable tap when loading
-                          : () async {
-                              if (_Key.currentState!.validate()) {
-                                setState(() {
-                                  _isLoading = true;
-                                });
+                  onTap: _isLoading
+                      ? null // Disable tap when loading
+                      : () async {
+                          if (_Key.currentState!.validate()) {
+                            setState(() {
+                              _isLoading = true;
+                            });
 
-                                try {
-                                  final newUser = await FirebaseAuth.instance
-                                      .createUserWithEmailAndPassword(
-                                          email: _controllerEmali.text,
-                                          password: _controllerpassword.text);
+                            try {
+                              final newUser = await FirebaseAuth.instance
+                                  .createUserWithEmailAndPassword(
+                                      email: _controllerEmali.text,
+                                      password: _controllerpassword.text);
 
-                                  await FirebaseFirestore.instance
-                                      .collection('users')
-                                      .doc(newUser.user!.uid)
-                                      .set({
-                                    'email': _controllerEmali.text,
-                                    'username': _controllerusername.text,
-                                    'cityname': _CityName.text,
-                                    'phonenumber': _phonenumber.text,
-                                    'animaltype': animaltype.text,
-                                  });
+                              await FirebaseFirestore.instance
+                                  .collection('users')
+                                  .doc(newUser.user!.uid)
+                                  .set({
+                                'email': _controllerEmali.text,
+                                'username': _controllerusername.text,
+                                'cityname': _CityName.text,
+                                'phonenumber': _phonenumber.text,
+                                'animaltype': animaltype.text,
+                                'password': _controllerpassword.text,
+                              });
 
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginScreen(
-                                        animaltype: animaltype.text,
-                                        city: _CityName.text,
-                                        username: _controllerusername.text,
-                                        phone: _phonenumber.text,
-                                      ),
-                                    ),
-                                  );
-                                } on FirebaseAuthException catch (e) {
-                                  if (e.code == 'weak-password') {
-                                    print('The password provided is too weak.');
-                                  } else if (e.code == 'email-already-in-use') {
-                                    print(
-                                        'The account already exists for that email.');
-                                  }
-                                } catch (e) {
-                                  print(e);
-                                } finally {
-                                  setState(() {
-                                    _isLoading = false;
-                                  });
-                                }
-                              }
-                            },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 20),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF00818A),
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 10,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: _isLoading
-                                ? CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        Colors.white),
-                                  )
-                                : Text(
-                                    'Signup',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => LoginScreen(
+                                    animaltype: animaltype.text,
+                                    city: _CityName.text,
+                                    username: _controllerusername.text,
+                                    phone: _phonenumber.text,
                                   ),
-                          ),
-                        ),
-                      ),
-                    );
-
-                    setState(() {
-                      _isLoading = true;
-                    });
-                    await Future.delayed(const Duration(seconds: 2));
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
-                      ),
-                    );
-                    setState(() {
-                      _isLoading = false;
-                    });
-                  },
+                                ),
+                              );
+                            } on FirebaseAuthException catch (e) {
+                              if (e.code == 'weak-password') {
+                                print('The password provided is too weak.');
+                              } else if (e.code == 'email-already-in-use') {
+                                print(
+                                    'The account already exists for that email.');
+                              }
+                            } catch (e) {
+                              print(e);
+                            } finally {
+                              setState(() {
+                                _isLoading = false;
+                              });
+                            }
+                          }
+                        },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Container(
@@ -445,7 +395,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 16, horizontal: 20),
                       decoration: BoxDecoration(
-                        color: Colors.blueGrey, // Background color
+                        color: _isLoading ? Colors.blueGrey : Color(0xFF00818A),
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -457,14 +407,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       child: Center(
                         child: _isLoading
-                            ? const CircularProgressIndicator(
+                            ? CircularProgressIndicator(
                                 valueColor:
                                     AlwaysStoppedAnimation<Color>(Colors.white),
                               )
-                            : const Text(
+                            : Text(
                                 'Signup',
                                 style: TextStyle(
-                                  color: Colors.white, // Text color
+                                  color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -472,7 +422,146 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                )
+                ),
+
+                // GestureDetector(
+                //   onTap: () async {
+                //     GestureDetector(
+                //       onTap: _isLoading
+                //           ? null // Disable tap when loading
+                //           : () async {
+                //               if (_Key.currentState!.validate()) {
+                //                 setState(() {
+                //                   _isLoading = true;
+                //                 });
+
+                //                 try {
+                //                   final newUser = await FirebaseAuth.instance
+                //                       .createUserWithEmailAndPassword(
+                //                           email: _controllerEmali.text,
+                //                           password: _controllerpassword.text);
+
+                //                   await FirebaseFirestore.instance
+                //                       .collection('users')
+                //                       .doc(newUser.user!.uid)
+                //                       .set({
+                //                     'email': _controllerEmali.text,
+                //                     'username': _controllerusername.text,
+                //                     'cityname': _CityName.text,
+                //                     'phonenumber': _phonenumber.text,
+                //                     'animaltype': animaltype.text,
+                //                     'password': _controllerpassword.text,
+                //                   });
+
+                //                   Navigator.of(context).push(
+                //                     MaterialPageRoute(
+                //                       builder: (context) => LoginScreen(
+                //                         animaltype: animaltype.text,
+                //                         city: _CityName.text,
+                //                         username: _controllerusername.text,
+                //                         phone: _phonenumber.text,
+                //                       ),
+                //                     ),
+                //                   );
+                //                 } on FirebaseAuthException catch (e) {
+                //                   if (e.code == 'weak-password') {
+                //                     print('The password provided is too weak.');
+                //                   } else if (e.code == 'email-already-in-use') {
+                //                     print(
+                //                         'The account already exists for that email.');
+                //                   }
+                //                 } catch (e) {
+                //                   print(e);
+                //                 } finally {
+                //                   setState(() {
+                //                     _isLoading = false;
+                //                   });
+                //                 }
+                //               }
+                //             },
+                //       child: Padding(
+                //         padding: const EdgeInsets.symmetric(horizontal: 20),
+                //         child: Container(
+                //           width: double.infinity,
+                //           padding: const EdgeInsets.symmetric(
+                //               vertical: 16, horizontal: 20),
+                //           decoration: BoxDecoration(
+                //             color: Color(0xFF00818A),
+                //             borderRadius: BorderRadius.circular(10),
+                //             boxShadow: [
+                //               BoxShadow(
+                //                 color: Colors.black.withOpacity(0.2),
+                //                 blurRadius: 10,
+                //                 offset: const Offset(0, 2),
+                //               ),
+                //             ],
+                //           ),
+                //           child: Center(
+                //             child: _isLoading
+                //                 ? CircularProgressIndicator(
+                //                     valueColor: AlwaysStoppedAnimation<Color>(
+                //                         Colors.white),
+                //                   )
+                //                 : Text(
+                //                     'Signup',
+                //                     style: TextStyle(
+                //                       color: Colors.white,
+                //                       fontSize: 18,
+                //                       fontWeight: FontWeight.bold,
+                //                     ),
+                //                   ),
+                //           ),
+                //         ),
+                //       ),
+                //     );
+                //     setState(() {
+                //       _isLoading = true;
+                //     });
+                //     await Future.delayed(const Duration(seconds: 2));
+                //     Navigator.of(context).push(
+                //       MaterialPageRoute(
+                //         builder: (context) => LoginScreen(),
+                //       ),
+                //     );
+                //     setState(() {
+                //       _isLoading = false;
+                //     });
+                //   },
+                //   child: Padding(
+                //     padding: const EdgeInsets.symmetric(horizontal: 20),
+                //     child: Container(
+                //       width: double.infinity,
+                //       padding: const EdgeInsets.symmetric(
+                //           vertical: 16, horizontal: 20),
+                //       decoration: BoxDecoration(
+                //         color: Colors.blueGrey, // Background color
+                //         borderRadius: BorderRadius.circular(10),
+                //         boxShadow: [
+                //           BoxShadow(
+                //             color: Colors.black.withOpacity(0.2),
+                //             blurRadius: 10,
+                //             offset: const Offset(0, 2),
+                //           ),
+                //         ],
+                //       ),
+                //       child: Center(
+                //         child: _isLoading
+                //             ? const CircularProgressIndicator(
+                //                 valueColor:
+                //                     AlwaysStoppedAnimation<Color>(Colors.white),
+                //               )
+                //             : const Text(
+                //                 'Signup',
+                //                 style: TextStyle(
+                //                   color: Colors.white, // Text color
+                //                   fontSize: 18,
+                //                   fontWeight: FontWeight.bold,
+                //                 ),
+                //               ),
+                //       ),
+                //     ),
+                //   ),
+                // )
 
                 // ----------------------------------------------------------------------------
                 //                                sign up bottom
@@ -480,7 +569,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 // ----------------------------------------------------------------------------
                 //                                already have an account
                 // ----------------------------------------------------------------------------
-                ,
+
                 SizedBox(height: 25),
                 GestureDetector(
                   onTap: () {
