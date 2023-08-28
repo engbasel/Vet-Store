@@ -4058,7 +4058,7 @@
             "outputFile": "com.example.animlaowner.app-merged_res-15:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\Downloads\\vet_test-main\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\courses\\Flutter\\my work\\ITI Summer training\\fainal project\\vet_test-main\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -4356,7 +4356,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\Downloads\\vet_test-main\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\courses\\Flutter\\my work\\ITI Summer training\\fainal project\\vet_test-main\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
