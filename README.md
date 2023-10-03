@@ -14,10 +14,13 @@ Welcome to the Animal Care Application project! This comprehensive mobile app is
 
 This project is built using Flutter and Firebase, harnessing their combined power to deliver a fantastic user experience.
 
-## Explore the Code 🚀
+## Explore the post in Linkedin 🚀
 
-Curious to dive into the code behind this project? You can find it on our GitHub repository: [GitHub Repository](https://lnkd.in/dkX2XqGp)
+LinkedIn link post 
+Do not forget to contact to me 
 
+https://www.linkedin.com/posts/basel-embaby-948671227_flutter-firebase-animalcare-activity-7104851998054727680-Yewl?utm_source=share&utm_medium=member_desktop
+<hr>
 ## Join Us in Celebrating Animals 🌟
 
 Join us on this journey of nurturing and celebrating the wonderful world of animals. Let's create happier and healthier lives for our beloved companions, one paw at a time. 🐶🐱🦜
