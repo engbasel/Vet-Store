@@ -1,6 +1,7 @@
 # 🐾 Vet-Store – Animal Care App  
 
 A **Flutter & Firebase-powered** mobile app designed to make pet care simple and convenient.  
+This project was developed as part of the **ITI Summer Training Final Project**.  
 
 ## 📌 Features  
 
@@ -57,9 +58,10 @@ flutter pub get
 flutter run
 ```
 
-## 📂 APK Download  
+## 📂 APK Downloads  
 
-🔗 [Download APKs](https://drive.google.com/drive/folders/1O6bwDWD5rqDHTzWNHCbdi6FX307Y0I04?usp=sharing)  
+📥 **Main APKs**: [Download Here](https://drive.google.com/drive/folders/1O6bwDWD5rqDHTzWNHCbdi6FX307Y0I04?usp=sharing)  
+📥 **ITI Training Project Files**: [Download Here](https://drive.google.com/drive/folders/1fK8HOTNMrrdzG2emk48O4-I35EjhyqyZ?usp=sharing)  
 
 ## 🌐 Social Media  
 
